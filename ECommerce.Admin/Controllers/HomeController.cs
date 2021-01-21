@@ -1,5 +1,6 @@
 ﻿using ECommerce.Admin.Filters;
 using ECommerce.Admin.Models;
+using ECommerce.Data.Abstract;
 using ECommerceData.Abstract;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -34,6 +35,12 @@ namespace ECommerce.Admin.Controllers
         public HomeController(ICategoryRepository categoryRepository)
         {
             _categoryRepository = categoryRepository;
+        }
+        
+        private IUserRepository _userRepository;
+        public HomeController(IUserRepository userRepository)
+        {
+            _userRepository = userRepository;
         }
 
 

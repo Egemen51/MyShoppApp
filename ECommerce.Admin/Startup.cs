@@ -1,3 +1,5 @@
+using ECommerce.Data.Abstract;
+using ECommerce.Data.Concrete.EfCore;
 using ECommerceData.Abstract;
 using ECommerceData.Concrete.EfCore;
 using Microsoft.AspNetCore.Builder;
@@ -29,6 +31,7 @@ namespace ECommerce.Admin
             services.AddControllersWithViews();
             services.AddScoped<IProductRepository, EfCoreProductRepository>();
             services.AddScoped<ICategoryRepository, EfCoreCategoryRepository>();
+            services.AddScoped<IUserRepository, EfCoreUserRepository>();
 
 
         }
