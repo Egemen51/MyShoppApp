@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ECommerceData.Abstract
 {
-    interface IRepository<T>
+    public interface IRepository<T>
     {
         T GetById(int id);
         void Create(T entitiy);

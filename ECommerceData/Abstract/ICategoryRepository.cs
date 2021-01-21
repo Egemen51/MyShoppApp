@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ECommerceData.Abstract
 {
-    interface ICategoryRepository:IRepository<Category>
+    public interface ICategoryRepository:IRepository<Category>
     {
     }
 }

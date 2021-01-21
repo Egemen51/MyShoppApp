@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ECommerceData.Concrete.EfCore
 {
-    class EfCoreCategoryRepository:EfCoreGenericRepository<Category,MyShopAppContext>
+    public class EfCoreCategoryRepository:EfCoreGenericRepository<Category,MyShopAppContext>,ICategoryRepository
     {
        
     }

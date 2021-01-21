@@ -1,5 +1,6 @@
 ﻿using ECommerce.Admin.Filters;
 using ECommerce.Admin.Models;
+using ECommerceData.Abstract;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -22,9 +23,21 @@ namespace ECommerce.Admin.Controllers
         {
             _logger = logger;
         }
+        
+        private IProductRepository _productRepository;
+        public HomeController(IProductRepository productRepository)
+        {
+            _productRepository = productRepository;
+        }
+        
+        private ICategoryRepository _categoryRepository;
+        public HomeController(ICategoryRepository categoryRepository)
+        {
+            _categoryRepository = categoryRepository;
+        }
 
 
-         
+
         public IActionResult Index()
         {
             List<WidgetModel> models = new List<WidgetModel>();

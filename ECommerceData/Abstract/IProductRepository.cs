@@ -5,7 +5,8 @@ using System.Text;
 
 namespace ECommerceData.Abstract
 {
-    interface IProductRepository:IRepository<Product>
+    public interface IProductRepository:IRepository<Product>
     {
+
     }
 }

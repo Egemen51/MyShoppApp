@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ECommerceData.Concrete.EfCore
 {
-    class EfCoreGenericRepository<TEntity, TContext> : IRepository<TEntity>
+    public class EfCoreGenericRepository<TEntity, TContext> : IRepository<TEntity>
         where TEntity : class
         where TContext : DbContext, new()
     {

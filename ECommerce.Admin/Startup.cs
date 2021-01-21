@@ -1,3 +1,5 @@
+using ECommerceData.Abstract;
+using ECommerceData.Concrete.EfCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,7 +27,9 @@ namespace ECommerce.Admin
         {
             services.AddSession(r => r.IdleTimeout = TimeSpan.FromDays(1));
             services.AddControllersWithViews();
-            //services.AddScoped<IProductRepository, EfCoreProductRepository>();
+            services.AddScoped<IProductRepository, EfCoreProductRepository>();
+            services.AddScoped<ICategoryRepository, EfCoreCategoryRepository>();
+
 
         }
 
