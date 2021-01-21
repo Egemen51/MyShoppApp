@@ -25,6 +25,8 @@ namespace ECommerce.Admin
         {
             services.AddSession(r => r.IdleTimeout = TimeSpan.FromDays(1));
             services.AddControllersWithViews();
+            //services.AddScoped<IProductRepository, EfCoreProductRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
