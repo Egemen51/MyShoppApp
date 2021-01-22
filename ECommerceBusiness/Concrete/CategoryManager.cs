@@ -1,4 +1,5 @@
 ﻿using ECommerce.Business.Abstract;
+using ECommerceData.Abstract;
 using ECommerceData.EfCore;
 using System;
 using System.Collections.Generic;
@@ -8,24 +9,31 @@ namespace ECommerce.Business.Concrete
 {
     public class CategoryManager : ICategoryService
     {
+        
+        private ICategoryRepository _categoryRepository;
+        public CategoryManager(ICategoryRepository categoryRepository)
+        {
+            _categoryRepository = categoryRepository;
+        }
+       
         public void Create(Category entitiy)
         {
-            throw new NotImplementedException();
+            _categoryRepository.Create(entitiy);
         }
 
         public void Delete(Category entitiy)
         {
-            throw new NotImplementedException();
+            _categoryRepository.Delete(entitiy);
         }
 
         public Category GetById(int id)
         {
-            throw new NotImplementedException();
+            return _categoryRepository.GetById(id);
         }
 
         public void Update(Category entitiy)
         {
-            throw new NotImplementedException();
+            _categoryRepository.Update(entitiy);
         }
     }
 }

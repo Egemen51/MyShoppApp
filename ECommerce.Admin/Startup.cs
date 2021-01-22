@@ -1,3 +1,5 @@
+using ECommerce.Business.Abstract;
+using ECommerce.Business.Concrete;
 using ECommerce.Data.Abstract;
 using ECommerce.Data.Concrete.EfCore;
 using ECommerceData.Abstract;
@@ -29,9 +31,14 @@ namespace ECommerce.Admin
         {
             services.AddSession(r => r.IdleTimeout = TimeSpan.FromDays(1));
             services.AddControllersWithViews();
+            
             services.AddScoped<IProductRepository, EfCoreProductRepository>();
             services.AddScoped<ICategoryRepository, EfCoreCategoryRepository>();
             services.AddScoped<IUserRepository, EfCoreUserRepository>();
+
+            services.AddScoped<IProductService, ProductManager>();
+            services.AddScoped<ICategoryService, CategoryManager>();
+            services.AddScoped<IUserService, UserManager>();
 
 
         }

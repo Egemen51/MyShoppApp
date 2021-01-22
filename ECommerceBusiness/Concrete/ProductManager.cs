@@ -14,25 +14,26 @@ namespace ECommerce.Business.Concrete
         {
             _productRepository = productRepository;
         }
+      
 
         public void Create(Product entitiy)
         {
-            throw new NotImplementedException();
+            _productRepository.Create(entitiy);
         }
 
         public void Delete(Product entitiy)
         {
-            throw new NotImplementedException();
+            _productRepository.Delete(entitiy);
         }
 
         public Product GetById(int id)
         {
-            throw new NotImplementedException();
+            return _productRepository.GetById(id);
         }
 
         public void Update(Product entitiy)
         {
-            throw new NotImplementedException();
+            _productRepository.Update(entitiy);
         }
     }
 }
